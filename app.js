@@ -8,12 +8,10 @@ require("dotenv").config();
 const PORT = 3000;
 
 // Middleware
+app.use(express.static("./public"));
 app.use(express.json());
 
-app.get("/hello", (req, res) => {
-  res.send("Hello Bro");
-});
-
+// Routes
 app.use("/api/v1/tasks", tasks);
 
 const start = async () => {
